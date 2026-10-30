@@ -1,1 +1,43 @@
-{ "current": { "appearance": "light" } }
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "current": {
+    "appearance": "light",
+    "sections": {
+      "header": {
+        "type": "header",
+        "settings": {
+          "menu": "",
+          "bg_color": "#a87052"
+        }
+      },
+      "footer": {
+        "type": "footer",
+        "settings": {
+          "bg_color": "#2d2e2d",
+          "tagline": "Comfort made together. Est. 2026.",
+          "instagram_url": "https://www.instagram.com/aurca.eg",
+          "tiktok_url": "https://www.tiktok.com/@aurca.eg",
+          "care_heading": "Client Care",
+          "collections_heading": "Collections",
+          "collections_menu": "",
+          "copyright": "© 2026 Aurca Homewear. All rights reserved."
+        }
+      },
+      "cart-drawer": {
+        "type": "cart-drawer",
+        "settings": {
+          "free_shipping_threshold": 0
+        }
+      }
+    },
+    "content_for_index": []
+  }
+}

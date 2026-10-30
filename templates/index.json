@@ -71,9 +71,6 @@
     },
     "marquee": {
       "type": "trust-marquee",
-      "settings": {
-        "bg_color": "#494D57"
-      },
       "blocks": {
         "item_1": {
           "type": "item",
@@ -112,7 +109,10 @@
         "item_3",
         "item_4",
         "item_5"
-      ]
+      ],
+      "settings": {
+        "bg_color": "#494d57"
+      }
     },
     "categories": {
       "type": "category-bento",
@@ -160,17 +160,16 @@
     "featured": {
       "type": "featured-products",
       "settings": {
+        "eyebrow": "Curated for You",
+        "heading": "First Time To The Ocean",
+        "load_more_label": "Load More",
+        "view_all_label": "View All Products",
         "collection": "",
         "products_to_show": 12
       }
     },
     "testimonial": {
       "type": "testimonial",
-      "disabled": true,
-      "settings": {
-        "eyebrow": "Customer Love",
-        "heading": "What Our Customers Say"
-      },
       "blocks": {
         "review_1": {
           "type": "review",
@@ -201,7 +200,12 @@
         "review_1",
         "review_2",
         "review_3"
-      ]
+      ],
+      "disabled": true,
+      "settings": {
+        "eyebrow": "Customer Love",
+        "heading": "What Our Customers Say"
+      }
     },
     "instagram": {
       "type": "instagram-grid",

@@ -917,39 +917,39 @@
     const results = document.getElementById('search-modal-results');
     if (!input || !results) return;
 
+    let timer, seq = 0;
     function renderSearchResults(query = '') {
-      const q = query.trim().toLowerCase();
-      let matched = PRODUCTS;
-      if (q) {
-        matched = PRODUCTS.filter(p =>
-          p.name.toLowerCase().includes(q) ||
-          p.cat.toLowerCase().includes(q) ||
-          p.fabric.toLowerCase().includes(q)
-        );
-      }
-
-      if (matched.length === 0) {
-        results.innerHTML = `
-          <div class="py-8 text-center text-xs text-[#494D57] dark:text-[#9A9690]">
-            No pieces found matching "${query}". Try searching for Silk, Robe, or Women.
-          </div>
-        `;
-        return;
-      }
-
-      results.innerHTML = matched.slice(0, 8).map(p => `
-        <div class="flex items-center gap-4 py-3 hover:bg-black/5 dark:hover:bg-white/5 px-2 cursor-pointer transition-colors" onclick="window.aurcaOpenQuickView(${p.id});">
-          <img src="${p.img}" class="w-12 h-14 object-cover bg-[#E5D7CD] shrink-0">
-          <div class="flex-1 min-w-0">
-            <h4 class="font-display text-sm font-light truncate">${p.name}</h4>
-            <p class="text-[9px] text-[#494D57] dark:text-[#9A9690]">${p.cat} · ${p.fabric}</p>
-          </div>
-          <span class="text-xs font-medium">${formatPrice(p.price)}</span>
-        </div>
-      `).join('');
+      const q = query.trim();
+      const mine = ++seq;
+      if (!q) { results.innerHTML = ''; return; }
+      fetch(`/search/suggest.json?q=${encodeURIComponent(q)}&resources[type]=product&resources[limit]=8`)
+        .then(r => r.json())
+        .then(data => {
+          if (mine !== seq) return; // a newer keystroke superseded this response
+          const matched = data.resources.results.products || [];
+          if (matched.length === 0) {
+            results.innerHTML = `
+              <div class="py-8 text-center text-xs text-[#494D57] dark:text-[#9A9690]">
+                No pieces found matching "${escapeHtml(q)}".
+              </div>
+            `;
+            return;
+          }
+          results.innerHTML = matched.map(p => `
+            <div class="flex items-center gap-4 py-3 hover:bg-black/5 dark:hover:bg-white/5 px-2 cursor-pointer transition-colors" onclick="window.aurcaOpenQuickView('${escapeHtml(p.handle)}');">
+              <img src="${escapeHtml(p.featured_image && p.featured_image.url || '')}" class="w-12 h-14 object-cover bg-[#E5D7CD] shrink-0">
+              <div class="flex-1 min-w-0">
+                <h4 class="font-display text-sm font-light truncate">${escapeHtml(p.title)}</h4>
+                <p class="text-[9px] text-[#494D57] dark:text-[#9A9690]">${escapeHtml(p.type || p.vendor || '')}</p>
+              </div>
+              <span class="text-xs font-medium">${formatPrice(parseFloat(p.price))}</span>
+            </div>
+          `).join('');
+        })
+        .catch(() => {});
     }
 
-    input.addEventListener('input', (e) => renderSearchResults(e.target.value));
+    input.addEventListener('input', (e) => { clearTimeout(timer); timer = setTimeout(() => renderSearchResults(e.target.value), 250); });
 
     document.querySelectorAll('[data-search-chip]').forEach(chip => {
       chip.addEventListener('click', () => {
@@ -959,7 +959,6 @@
       });
     });
 
-    renderSearchResults('');
   }
 
   window.aurcaOpenQuickView = function (id) {

@@ -1,8 +1,39 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
-    "main": { "type": "main-product" },
-    "related": { "type": "related-products" },
-    "recently-viewed": { "type": "recently-viewed" }
+    "main": {
+      "type": "main-product",
+      "settings": {
+        "show_buy_now": true,
+        "shipping_text": ""
+      }
+    },
+    "related": {
+      "type": "related-products",
+      "settings": {
+        "heading": "You may also like",
+        "subheading": "Complete your domestic sanctuary"
+      }
+    },
+    "recently-viewed": {
+      "type": "recently-viewed",
+      "settings": {
+        "heading": "Recently viewed",
+        "subheading": "Pick up where you left off"
+      }
+    }
   },
-  "order": ["main", "related", "recently-viewed"]
+  "order": [
+    "main",
+    "related",
+    "recently-viewed"
+  ]
 }

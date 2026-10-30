@@ -9,42 +9,6 @@
   /* ==========================================================================
      1. CATALOG & CONSTANTS (from Figma application code)
      ========================================================================== */
-  const IMAGES = {
-    hero: 'https://images.unsplash.com/photo-1771620886948-3887ba3223f3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1800',
-    womenHero: 'https://images.unsplash.com/photo-1766056278944-ca0e4f49e61f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080',
-    menHero: 'https://images.unsplash.com/photo-1736697421338-c361795c7191?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080',
-    excHero: 'https://images.unsplash.com/photo-1778731525489-020d49e8e1a1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080',
-    lifestyle1: 'https://images.unsplash.com/photo-1766876767264-0c6d73891a7e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080',
-    lifestyle2: 'https://images.unsplash.com/photo-1639905517739-abec6b616041?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080',
-    lifestyle3: 'https://images.unsplash.com/photo-1506377170913-e1d634babf96?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080',
-    lifestyle4: 'https://images.unsplash.com/photo-1594735974070-b678995b9f09?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080',
-    lifestyle5: 'https://images.unsplash.com/photo-1666964613986-ee204609abbc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080',
-    morning: 'https://images.unsplash.com/photo-1552858725-a19e7fcd3ac4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080',
-    living: 'https://images.unsplash.com/photo-1738407274756-25325763dd4e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080',
-    prod1: 'https://images.unsplash.com/photo-1766056278944-ca0e4f49e61f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=800',
-    prod2: 'https://images.unsplash.com/photo-1766056278967-c0646b1bfd67?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=800',
-    prod3: 'https://images.unsplash.com/photo-1766056278825-55168658f120?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=800',
-    prod4: 'https://images.unsplash.com/photo-1766056278842-b754f1e093c0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=800',
-    prod5: 'https://images.unsplash.com/photo-1718963892337-b6729c302b8f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=800',
-    prod6: 'https://images.unsplash.com/photo-1584061606850-a57652a323a4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=800'
-  };
-
-  const PRODUCTS = [
-    { id: 1, name: 'Midnight Silk Set', cat: 'Women', price: 12326, originalPrice: null, tag: 'Bestseller', img: IMAGES.prod1, colors: ['#1a2240', '#9E6E7A', '#B87150'], fabric: 'Mulberry Silk' },
-    { id: 2, name: 'Morning Bloom', cat: 'Women', price: 9356, originalPrice: null, tag: 'New', img: IMAGES.prod2, colors: ['#D4C8B4', '#9E6E7A', '#3D4147'], fabric: 'Premium Modal' },
-    { id: 3, name: 'Lavender Reverie', cat: 'Together', price: 17276, originalPrice: null, tag: 'Together', img: IMAGES.prod3, colors: ['#C9BADC', '#F5F0EA', '#5C1C2A'], fabric: 'Mulberry Silk' },
-    { id: 4, name: 'Cloud White', cat: 'Women', price: 9851, originalPrice: 12326, tag: null, img: IMAGES.prod4, colors: ['#F5F0EA', '#E8D5C9', '#9E6E7A'], fabric: 'Organic Cotton' },
-    { id: 5, name: 'Dusk Robe', cat: 'Men', price: 10841, originalPrice: null, tag: 'New', img: IMAGES.prod5, colors: ['#3D4147', '#B87150', '#C0BFC0'], fabric: 'Velour Cotton' },
-    { id: 6, name: 'Noir Prestige', cat: 'Together', price: 20741, originalPrice: null, tag: 'Together', img: IMAGES.prod6, colors: ['#1E1E1E', '#B87150', '#F5F0EA'], fabric: 'Cashmere Blend' },
-    { id: 7, name: 'Ivory Embrace', cat: 'Women', price: 8861, originalPrice: null, tag: null, img: IMAGES.prod4, colors: ['#F5F0EA', '#D4C8B4', '#9E6E7A'], fabric: 'Organic Cotton' },
-    { id: 8, name: 'Slate Essential', cat: 'Men', price: 9851, originalPrice: null, tag: null, img: IMAGES.prod5, colors: ['#3D4147', '#1E1E1E', '#C0BFC0'], fabric: 'Premium Modal' },
-    { id: 9, name: 'Rose Atelier', cat: 'Together', price: 19256, originalPrice: 21236, tag: 'Together', img: IMAGES.prod3, colors: ['#9E6E7A', '#F5F0EA', '#5C1C2A'], fabric: 'Mulberry Silk' },
-    { id: 10, name: 'Pearl Morning', cat: 'Women', price: 10841, originalPrice: null, tag: null, img: IMAGES.prod2, colors: ['#F5F0EA', '#D4C8B4', '#B87150'], fabric: 'Premium Modal' },
-    { id: 11, name: 'Onyx Classic', cat: 'Men', price: 11831, originalPrice: null, tag: null, img: IMAGES.prod6, colors: ['#1E1E1E', '#3D4147', '#B87150'], fabric: 'Velour Cotton' },
-    { id: 12, name: 'Champagne Dreams', cat: 'Together', price: 22721, originalPrice: null, tag: 'Together', img: IMAGES.prod1, colors: ['#D4C8B4', '#F5F0EA', '#5C1C2A'], fabric: 'Cashmere Blend' }
-  ];
-
-
   const TRANSLATIONS = {
     en: {
       women: 'Women', men: 'Men', together: 'Together', lookbook: 'Lookbook',
@@ -586,8 +550,7 @@
 
   /* ==========================================================================
      8. QUICK VIEW MODAL LOGIC — fetches the real product (by handle) via
-     Shopify's /products/{handle}.js AJAX endpoint. Replaces the old version
-     that read from the 12-item fake PRODUCTS array.
+     Shopify's /products/{handle}.js AJAX endpoint.
      ========================================================================== */
   let qvProduct = null;
   let qvSelectedOptions = [];

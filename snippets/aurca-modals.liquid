@@ -154,7 +154,7 @@
 
     {%- comment -%} Filter chips {%- endcomment -%}
     <div class="flex flex-wrap gap-2 mb-6">
-      {%- assign chips = "All,Women,Men,Together,Silk,Cotton,Modal" | split: "," -%}
+      {%- assign chips = "All,Women,Men,Together" | split: "," -%}
       {%- for chip in chips -%}
         <button type="button" data-search-chip="{{ chip }}" class="text-[9px] tracking-[0.18em] uppercase px-3 py-1.5 border border-black/10 dark:border-white/10 hover:border-[#A87052] transition-colors font-medium">
           {{ chip }}

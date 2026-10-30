@@ -75,7 +75,7 @@
     wishlist = [];
   }
 
-  let currentLang = localStorage.getItem('aurca:lang') || 'en';
+  let currentLang = 'en'; // Arabic toggle removed
   let currentCurrency = 'EGP';
   localStorage.setItem('aurca:currency', 'EGP');
   let currentFilter = 'All';

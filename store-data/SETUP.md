@@ -100,15 +100,17 @@ Configure footer menus to link to relevant policy/about pages or collection link
    - **Fabric** (Select **Tag** prefix or use tag filters)
 *Note: If the Search & Discovery app is not yet installed/configured, the theme will automatically fall back to native tag filtering (e.g. `fabric:Silk`, `color:Champagne`).*
 
-## 6. Payments and Checkout Setup
+## 6. Payments and Checkout Setup (Cash on Delivery only)
 
-To test the checkout process end-to-end:
+Checkout is COD-only for now. This is set in the Shopify Admin, not in the theme:
 1. Go to **Settings** → **Payments**.
-2. If Shopify Payments is active, click **Manage**, scroll down to **Test mode**, check **Enable test mode**, and click **Save**.
-3. Alternatively, under **Payment providers**, choose a test provider like **(for testing) Bogus Gateway** and activate it.
-4. Use credit card number `1` (or `1`, `2`, `3` for CVV/expiry) to complete checkout test transactions.
+2. Under **Manual payment methods**, click **Add manual payment method** → **Cash on Delivery (COD)**. Optionally rename it and add checkout instructions, then **Activate**.
+3. Deactivate every other payment provider (Shopify Payments, the Bogus test gateway, PayPal, etc.) via **Manage** → **Deactivate**, so COD is the only option at checkout.
+4. Place a test order and confirm Cash on Delivery is the only payment method shown.
 
-*Note: For go-live in Egypt, the client will need a local provider — Paymob or PayTabs via the Shopify App Store (Shopify Payments is not available in Egypt). Decision pending client.*
+*COD orders arrive as "Payment pending" — mark them as paid in the Admin after delivery. Refunds on COD orders are made by bank transfer (see the Support pop-up's Exchange & Return Policy).*
+
+*Later, to accept online payments in Egypt (Shopify Payments is not available there), the client will need a local provider — Paymob or PayTabs via the Shopify App Store. Decision pending client.*
 
 ## Dummy data register (client must replace before launch)
 
@@ -126,4 +128,4 @@ To test the checkout process end-to-end:
 | Social media URLs | Footer section settings | EMPTY (client to provide) |
 | VAT-inclusive pricing decision | Admin → Taxes | PENDING CLIENT |
 | Arabic storefront (yes/no) | locales/ — not built | PENDING CLIENT |
-| Payment provider (Paymob/PayTabs) | Admin → Payments | PENDING CLIENT |
+| Payment provider | Admin → Payments | COD only for now; Paymob/PayTabs PENDING CLIENT |

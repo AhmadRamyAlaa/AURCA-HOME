@@ -14,11 +14,11 @@
           {%- endfor -%}
         {%- else -%}
        
-        <a href="{{ collections['women'].url | default: routes.all_products_collection_url }}" class="text-white/70 hover:text-white transition-colors text-[11px] tracking-[0.2em] uppercase font-medium" data-i18n="women">
-          Women
-        </a>
         <a href="{{ collections['men'].url | default: routes.all_products_collection_url }}" class="text-white/70 hover:text-white transition-colors text-[11px] tracking-[0.2em] uppercase font-medium" data-i18n="men">
           Men
+        </a>
+        <a href="{{ collections['women'].url | default: routes.all_products_collection_url }}" class="text-white/70 hover:text-white transition-colors text-[11px] tracking-[0.2em] uppercase font-medium" data-i18n="women">
+          Women
         </a>
         <a href="{{ collections['together'].url | default: routes.all_products_collection_url }}" class="text-white/70 hover:text-white transition-colors text-[11px] tracking-[0.2em] uppercase font-medium" data-i18n="together">
           Together
@@ -104,8 +104,8 @@
   <div data-menu hidden class="lg:hidden bg-[#2D2E2D] text-white border-t border-white/10 px-6 py-6 transition-all duration-300 shadow-2xl">
     <div class="flex flex-col gap-4 mb-6">
       <a href="{{ routes.all_products_collection_url }}" class="text-white/80 hover:text-white font-medium text-xs tracking-[0.2em] uppercase py-2" data-i18n="tab_all">All</a>
-      <a href="{{ collections['women'].url | default: routes.all_products_collection_url }}" class="text-white/80 hover:text-white font-medium text-xs tracking-[0.2em] uppercase py-2" data-i18n="women">Women</a>
       <a href="{{ collections['men'].url | default: routes.all_products_collection_url }}" class="text-white/80 hover:text-white font-medium text-xs tracking-[0.2em] uppercase py-2" data-i18n="men">Men</a>
+      <a href="{{ collections['women'].url | default: routes.all_products_collection_url }}" class="text-white/80 hover:text-white font-medium text-xs tracking-[0.2em] uppercase py-2" data-i18n="women">Women</a>
       <a href="{{ collections['together'].url | default: routes.all_products_collection_url }}" class="text-white/80 hover:text-white font-medium text-xs tracking-[0.2em] uppercase py-2" data-i18n="together">Together</a>
       <a href="#lookbook" class="text-white/80 hover:text-white font-medium text-xs tracking-[0.2em] uppercase py-2" data-i18n="lookbook">Lookbook</a>
     </div>

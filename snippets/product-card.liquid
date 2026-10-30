@@ -179,7 +179,7 @@
         {%- if p_colors.size > 0 -%}
           <div class="flex gap-1.5">
             {%- for c in p_colors -%}
-              <div class="w-3 h-3 rounded-full border border-black/15" style="background: {%- assign sw_parts = c | split: '/' -%}{%- if sw_parts.size > 1 -%}linear-gradient(90deg, {{ sw_parts[0] }} 50%, {{ sw_parts[1] }} 50%){%- else -%}{{ c }}{%- endif -%};"></div>
+              <div class="w-5 h-5 rounded-full border border-black/15" style="background: {%- assign sw_parts = c | split: '/' -%}{%- if sw_parts.size > 1 -%}linear-gradient(90deg, {{ sw_parts[0] }} 50%, {{ sw_parts[1] }} 50%){%- else -%}{{ c }}{%- endif -%};"></div>
             {%- endfor -%}
           </div>
         {%- endif -%}

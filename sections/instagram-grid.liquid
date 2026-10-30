@@ -57,7 +57,7 @@
           {%- assign tag_text = block.settings.tag | default: fallback_tag -%}
           {%- assign cap_text = block.settings.caption | default: fallback_cap -%}
 
-          <div class="{% if forloop.first %}col-span-2 row-span-2{% endif %} group relative overflow-hidden cursor-pointer" style="aspect-ratio: 1;" {{ block.shopify_attributes }}>
+          {%- if section.settings.instagram_url != blank -%}<a href="{{ section.settings.instagram_url }}" target="_blank" rel="noopener noreferrer" aria-label="{{ cap_text | escape }} — Instagram"{%- else -%}<div{%- endif %} class="{% if forloop.first %}col-span-2 row-span-2{% endif %} group relative block overflow-hidden cursor-pointer" style="aspect-ratio: 1;" {{ block.shopify_attributes }}>
             <img src="{{ img_src }}" alt="{{ cap_text | escape }}" loading="lazy" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
             <div class="absolute inset-0 transition-opacity duration-300 {% if forloop.first %}opacity-50{% else %}opacity-35{% endif %} group-hover:opacity-100" style="background: linear-gradient(to top, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0) 55%);"></div>
             <div class="absolute bottom-0 left-0 right-0 {% if forloop.first %}p-6{% else %}p-4{% endif %} translate-y-1 group-hover:translate-y-0 transition-transform duration-300">
@@ -73,7 +73,7 @@
                 <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
               </svg>
             </div>
-          </div>
+          {%- if section.settings.instagram_url != blank -%}</a>{%- else -%}</div>{%- endif %}
         {%- endfor -%}
       {%- else -%}
         {%- comment -%} Photo 1: Featured 2x2 {%- endcomment -%}
@@ -213,7 +213,7 @@
   "settings": [
     { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "@aurca" },
     { "type": "text", "id": "heading", "label": "Heading", "default": "Life in Aurca" },
-    { "type": "url", "id": "instagram_url", "label": "Instagram URL", "info": "Leave empty to hide the link" },
+    { "type": "text", "id": "instagram_url", "label": "Instagram URL", "info": "Photos and the Follow link open this page. Leave empty to turn the links off.", "default": "https://www.instagram.com/aurca.eg" },
     { "type": "text", "id": "link_label", "label": "Link label", "default": "Follow on Instagram" }
   ],
   "blocks": [

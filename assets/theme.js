@@ -478,10 +478,12 @@
 
     if (wishlist.length === 0) {
       container.innerHTML = '';
+      container.hidden = true; // so the empty message can take the full drawer height and sit in the middle
       if (emptyState) emptyState.hidden = false;
       return;
     }
 
+    container.hidden = false;
     if (emptyState) emptyState.hidden = true;
 
     const products = await Promise.all(
@@ -592,15 +594,20 @@
   let qvQty = 1;
 
   const COLOR_SWATCHES = {
+    'ocean-navy-white': '#1F2F4D/#FFFFFF',
+    'ocean-muted-olive-cream': '#6B6B3A/#F3EBDD',
     copper: '#A87052', terracotta: '#A87052', charcoal: '#494D57', slate: '#494D57',
     dark: '#2D2E2D', mauve: '#97606C', burgundy: '#4A1A28', blush: '#E5D7CD',
     sand: '#E5D7CD', silver: '#BCBCBC', champagne: '#F8F6F1', cream: '#F8F6F1',
     sage: '#A9B29B', ivory: '#FFFFF0', taupe: '#B9A08E'
   };
 
+  // Two-tone pairs are stored as 'first/second' and drawn as a half-and-half circle
   function swatchColorFor(value) {
     const handle = value.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
-    return COLOR_SWATCHES[handle] || '#A87052';
+    const color = COLOR_SWATCHES[handle] || '#A87052';
+    const [a, b] = color.split('/');
+    return b ? `linear-gradient(90deg, ${a} 50%, ${b} 50%)` : color;
   }
 
   function qvResolveVariant() {
@@ -863,7 +870,7 @@
       });
 
       if (loadMoreBtn) {
-        loadMoreBtn.hidden = matchCount <= visibleCount;
+        loadMoreBtn.style.display = matchCount <= visibleCount ? 'none' : ''; // style, not [hidden]: the button's flex class would override the attribute
       }
 
       const featuredGrid = document.querySelector('[data-featured-grid]');
@@ -893,9 +900,11 @@
           }
         });
         if (matchCount <= visibleCount) {
-          loadMoreBtn.hidden = true;
+          loadMoreBtn.style.display = 'none';
         }
       });
+      // Nothing more to load on first paint either
+      if (cards.length <= visibleCount) loadMoreBtn.style.display = 'none';
     }
 
   }

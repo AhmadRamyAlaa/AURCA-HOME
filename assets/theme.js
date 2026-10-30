@@ -1238,11 +1238,26 @@
     // Ask question form submit
     const askForm = document.getElementById('ask-question-form');
     if (askForm) {
-      askForm.addEventListener('submit', (e) => {
+      askForm.addEventListener('submit', async (e) => {
         e.preventDefault();
-        askForm.hidden = true;
-        const success = document.getElementById('ask-question-success');
-        if (success) success.hidden = false;
+        const data = new FormData(askForm);
+        const product = (document.getElementById('ask-product-name')?.textContent || '').replace('Regarding: ', '');
+        if (product) data.set('contact[body]', `Product: ${product}\n\n${data.get('contact[body]')}`);
+        const btn = askForm.querySelector('button[type="submit"]');
+        btn.disabled = true;
+        try {
+          const res = await fetch(askForm.action, { method: 'POST', body: data });
+          // Shopify redirects to /challenge when it wants a captcha; treat that as not sent
+          if (!res.ok || res.url.includes('/challenge')) throw new Error('send failed');
+          askForm.reset();
+          askForm.hidden = true;
+          const success = document.getElementById('ask-question-success');
+          if (success) success.hidden = false;
+        } catch (err) {
+          showToast(currentLang === 'en' ? 'Could not send your message. Please try again.' : 'تعذر إرسال رسالتك. حاول مرة أخرى.', 'info');
+        } finally {
+          btn.disabled = false;
+        }
       });
     }
 

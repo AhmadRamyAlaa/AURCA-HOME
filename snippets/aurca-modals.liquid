@@ -218,18 +218,20 @@
     <h3 class="font-display text-2xl font-light mb-1">Ask a Question</h3>
     <p id="ask-product-name" class="text-xs text-[#494D57] dark:text-[#9A9690] mb-6 font-medium"></p>
 
-    <form id="ask-question-form" class="space-y-4">
+    <form id="ask-question-form" class="space-y-4" method="post" action="{{ routes.root_url }}contact">
+      <input type="hidden" name="form_type" value="contact">
+      <input type="hidden" name="utf8" value="✓">
       <div>
         <label class="block text-[9px] tracking-[0.2em] uppercase font-medium mb-1">Your Name</label>
-        <input type="text" required class="w-full border border-black/15 dark:border-white/15 bg-transparent px-4 py-2.5 text-xs outline-none focus:border-[#A87052]">
+        <input type="text" name="contact[name]" required class="w-full border border-black/15 dark:border-white/15 bg-transparent px-4 py-2.5 text-xs outline-none focus:border-[#A87052]">
       </div>
       <div>
         <label class="block text-[9px] tracking-[0.2em] uppercase font-medium mb-1">Email Address</label>
-        <input type="email" required class="w-full border border-black/15 dark:border-white/15 bg-transparent px-4 py-2.5 text-xs outline-none focus:border-[#A87052]">
+        <input type="email" name="contact[email]" required class="w-full border border-black/15 dark:border-white/15 bg-transparent px-4 py-2.5 text-xs outline-none focus:border-[#A87052]">
       </div>
       <div>
         <label class="block text-[9px] tracking-[0.2em] uppercase font-medium mb-1">Question / Inquiry</label>
-        <textarea rows="3" required class="w-full border border-black/15 dark:border-white/15 bg-transparent px-4 py-2.5 text-xs outline-none focus:border-[#A87052] resize-none"></textarea>
+        <textarea name="contact[body]" rows="3" required class="w-full border border-black/15 dark:border-white/15 bg-transparent px-4 py-2.5 text-xs outline-none focus:border-[#A87052] resize-none"></textarea>
       </div>
       <button type="submit" class="w-full py-3.5 bg-[#A87052] text-white text-[10px] tracking-[0.22em] uppercase font-medium hover:opacity-85 transition-opacity">
         Send Inquiry

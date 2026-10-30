@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "slider": {
@@ -6,8 +15,9 @@
         "slide_1": {
           "type": "slide",
           "settings": {
+            "image": "shopify://shop_images/DSC01221_JPG.jpg",
             "image_url": "https://images.unsplash.com/photo-1771620886948-3887ba3223f3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1800",
-            "label": "New Collection — 2026",
+            "label": "First time to the ocean — 2026",
             "title": "Dressed for the|Hours Between",
             "text": "Luxurious pyjamas and homewear for morning rituals, afternoon ease, and quiet evenings.",
             "button_label": "Shop the Collection",
@@ -17,8 +27,9 @@
         "slide_2": {
           "type": "slide",
           "settings": {
+            "image": "shopify://shop_images/DSC01213_JPG.jpg",
             "image_url": "https://images.unsplash.com/photo-1766056278944-ca0e4f49e61f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
-            "label": "Women's Edit",
+            "label": "First time to the ocean | Women",
             "title": "Graceful silhouettes,|made to be lived in.",
             "text": "From mulberry silk to organic cotton — every piece shaped around how a woman actually lives.",
             "button_label": "Explore Women's",
@@ -28,8 +39,9 @@
         "slide_3": {
           "type": "slide",
           "settings": {
+            "image": "shopify://shop_images/DSC01158_JPG.jpg",
             "image_url": "https://images.unsplash.com/photo-1736697421338-c361795c7191?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
-            "label": "Men's Essentials",
+            "label": "First time to the ocean | Men",
             "title": "Refined comfort,|without compromise.",
             "text": "Premium natural fabrics in precise cuts. Ease and elegance, at every hour.",
             "button_label": "Explore Men's",
@@ -39,8 +51,9 @@
         "slide_4": {
           "type": "slide",
           "settings": {
+            "image": "shopify://shop_images/DSC01139_JPG.jpg",
             "image_url": "https://images.unsplash.com/photo-1778731525489-020d49e8e1a1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
-            "label": "Together Edition",
+            "label": "First time to the ocean | Together",
             "title": "Made for the|moments you share.",
             "text": "Limited pieces in cashmere and mulberry silk — designed as a pair, worn as one.",
             "button_label": "Shop Together",
@@ -53,10 +66,12 @@
         "slide_2",
         "slide_3",
         "slide_4"
-      ]
+      ],
+      "settings": {}
     },
     "marquee": {
-      "type": "trust-marquee"
+      "type": "trust-marquee",
+      "settings": {}
     },
     "categories": {
       "type": "category-bento",
@@ -64,24 +79,28 @@
         "women": {
           "type": "category",
           "settings": {
-            "title": "Women",
+            "collection": "",
+            "badge": "New Arrivals",
             "eyebrow": "The Feminine Edit",
-            "badge": "New Arrivals"
+            "title": "Women"
           }
         },
         "men": {
           "type": "category",
           "settings": {
-            "title": "Men",
-            "eyebrow": "The Essential Range"
+            "collection": "",
+            "badge": "",
+            "eyebrow": "The Essential Range",
+            "title": "Men"
           }
         },
         "together": {
           "type": "category",
           "settings": {
-            "title": "Together",
+            "collection": "",
+            "badge": "Limited Edition",
             "eyebrow": "The Luxury Reserve",
-            "badge": "Limited Edition"
+            "title": "Together"
           }
         }
       },
@@ -89,13 +108,23 @@
         "women",
         "men",
         "together"
-      ]
+      ],
+      "settings": {
+        "eyebrow": "Explore",
+        "heading": "Shop by Collection",
+        "link_label": "View All"
+      }
     },
     "featured": {
-      "type": "featured-products"
+      "type": "featured-products",
+      "settings": {
+        "collection": "",
+        "products_to_show": 12
+      }
     },
     "testimonial": {
-      "type": "testimonial"
+      "type": "testimonial",
+      "settings": {}
     },
     "instagram": {
       "type": "instagram-grid",
@@ -150,7 +179,13 @@
         "p4",
         "p5",
         "p6"
-      ]
+      ],
+      "settings": {
+        "eyebrow": "@aurca",
+        "heading": "Life in Aurca",
+        "instagram_url": "",
+        "link_label": "Follow on Instagram"
+      }
     }
   },
   "order": [

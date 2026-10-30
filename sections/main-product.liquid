@@ -84,6 +84,8 @@
                       {%- if swatch_color == blank -%}
                         {%- assign value_handle = value | handle -%}
                         {%- case value_handle -%}
+                          {%- when 'ocean-navy-white' -%}{%- assign swatch_color = '#1F2F4D/#FFFFFF' -%}
+                          {%- when 'ocean-muted-olive-cream' -%}{%- assign swatch_color = '#6B6B3A/#F3EBDD' -%}
                           {%- when 'copper' or 'terracotta' -%}{%- assign swatch_color = '#A87052' -%}
                           {%- when 'charcoal' or 'slate' -%}{%- assign swatch_color = '#494D57' -%}
                           {%- when 'dark' -%}{%- assign swatch_color = '#2D2E2D' -%}
@@ -100,7 +102,7 @@
                         {%- endcase -%}
                       {%- endif -%}
                       <span class="block w-8 h-8 rounded-full ring-1 ring-outline-variant peer-checked:ring-2 peer-checked:ring-offset-2 peer-checked:ring-primary transition-soft"
-                            style="background-color: {{ swatch_color }};" title="{{ value }}"></span>
+                            style="background: {%- assign sw_parts = swatch_color | split: '/' -%}{%- if sw_parts.size > 1 -%}linear-gradient(90deg, {{ sw_parts[0] }} 50%, {{ sw_parts[1] }} 50%){%- else -%}{{ swatch_color }}{%- endif -%};" title="{{ value }}"></span>
                     {%- else -%}
                       <span class="block px-6 py-2 rounded-full border border-outline-variant font-label-caps text-[12px] hover:border-primary peer-checked:border-2 peer-checked:border-primary peer-checked:bg-primary-container transition-soft">{{ value }}</span>
                     {%- endif -%}

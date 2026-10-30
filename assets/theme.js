@@ -1058,6 +1058,21 @@
       });
     });
 
+    // Product card image arrows (snippets/product-card.liquid)
+    document.querySelectorAll('[data-card-gallery]').forEach(gallery => {
+      const wrap = gallery.parentElement;
+      const img = wrap.querySelector('[data-card-img]');
+      const urls = gallery.textContent.split('|');
+      let i = 0;
+      [['[data-card-prev]', -1], ['[data-card-next]', 1]].forEach(([sel, step]) => {
+        wrap.querySelector(sel).addEventListener('click', (e) => {
+          e.stopPropagation();
+          i = (i + step + urls.length) % urls.length;
+          img.src = urls[i];
+        });
+      });
+    });
+
     document.querySelectorAll('[data-quick-add-btn]').forEach(btn => {
       btn.addEventListener('click', async (e) => {
         e.stopPropagation();

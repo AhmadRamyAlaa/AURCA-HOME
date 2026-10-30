@@ -47,6 +47,8 @@
         {%- if swatch_color == blank -%}
           {%- assign value_handle = value | handle -%}
           {%- case value_handle -%}
+            {%- when 'ocean-navy-white' -%}{%- assign swatch_color = '#1F2F4D/#FFFFFF' -%}
+            {%- when 'ocean-muted-olive-cream' -%}{%- assign swatch_color = '#6B6B3A/#F3EBDD' -%}
             {%- when 'copper' or 'terracotta' -%}{%- assign swatch_color = '#A87052' -%}
             {%- when 'charcoal' or 'slate' -%}{%- assign swatch_color = '#494D57' -%}
             {%- when 'dark' -%}{%- assign swatch_color = '#2D2E2D' -%}
@@ -72,9 +74,22 @@
     {%- comment -%} Image Container with 3/4 Aspect Ratio {%- endcomment -%}
     <div class="relative overflow-hidden mb-4 product-image-wrap" style="background: #E5D7CD;" data-open-quickview="{{ product.handle }}">
       <div class="overflow-hidden aspect-square md:aspect-[3/4]">
-        <img src="{{ p_img }}" alt="{{ p_title | escape }}" loading="lazy"
+        <img src="{{ p_img }}" alt="{{ p_title | escape }}" loading="lazy" data-card-img
              class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700">
       </div>
+
+      {%- comment -%} Image arrows: only when the product has more than one image {%- endcomment -%}
+      {%- if product.images.size > 1 -%}
+        <div data-card-gallery hidden>{%- for image in product.images limit: 6 -%}{{ image | image_url: width: 800 }}{% unless forloop.last %}|{% endunless %}{%- endfor -%}</div>
+        <button type="button" data-card-prev aria-label="Previous image"
+                class="absolute left-2 top-1/2 -translate-y-1/2 w-8 h-8 bg-white/90 flex items-center justify-center shadow-sm hover:bg-white transition-opacity md:opacity-0 md:group-hover:opacity-100">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M15 18l-6-6 6-6"/></svg>
+        </button>
+        <button type="button" data-card-next aria-label="Next image"
+                class="absolute right-2 top-1/2 -translate-y-1/2 w-8 h-8 bg-white/90 flex items-center justify-center shadow-sm hover:bg-white transition-opacity md:opacity-0 md:group-hover:opacity-100">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 18l6-6-6-6"/></svg>
+        </button>
+      {%- endif -%}
 
       {%- comment -%} Badges {%- endcomment -%}
       {%- if product.tags contains 'bestseller' or product.tags contains 'Bestseller' -%}
@@ -164,7 +179,7 @@
         {%- if p_colors.size > 0 -%}
           <div class="flex gap-1.5">
             {%- for c in p_colors -%}
-              <div class="w-3 h-3 rounded-full border border-black/15" style="background: {{ c }};"></div>
+              <div class="w-3 h-3 rounded-full border border-black/15" style="background: {%- assign sw_parts = c | split: '/' -%}{%- if sw_parts.size > 1 -%}linear-gradient(90deg, {{ sw_parts[0] }} 50%, {{ sw_parts[1] }} 50%){%- else -%}{{ c }}{%- endif -%};"></div>
             {%- endfor -%}
           </div>
         {%- endif -%}

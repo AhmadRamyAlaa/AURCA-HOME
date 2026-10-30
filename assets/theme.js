@@ -899,7 +899,7 @@
             return;
           }
           results.innerHTML = matched.map(p => `
-            <div class="flex items-center gap-4 py-3 hover:bg-black/5 dark:hover:bg-white/5 px-2 cursor-pointer transition-colors" onclick="window.aurcaOpenQuickView('${escapeHtml(p.handle)}');">
+            <div class="flex items-center gap-4 py-3 hover:bg-black/5 dark:hover:bg-white/5 px-2 cursor-pointer transition-colors" data-search-result="${escapeHtml(p.handle)}">
               <img src="${escapeHtml(p.featured_image && p.featured_image.url || '')}" class="w-12 h-14 object-cover bg-[#E5D7CD] shrink-0">
               <div class="flex-1 min-w-0">
                 <h4 class="font-display text-sm font-light truncate">${escapeHtml(p.title)}</h4>
@@ -911,6 +911,11 @@
         })
         .catch(() => {});
     }
+
+    results.addEventListener('click', (e) => {
+      const row = e.target.closest('[data-search-result]');
+      if (row) window.aurcaOpenQuickView(row.dataset.searchResult);
+    });
 
     input.addEventListener('input', (e) => { clearTimeout(timer); timer = setTimeout(() => renderSearchResults(e.target.value), 250); });
 

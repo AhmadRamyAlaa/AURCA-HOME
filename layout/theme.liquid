@@ -86,14 +86,14 @@
     {{ content_for_header }}
   </head>
 
-  <body class="bg-background text-on-surface font-body-md selection:bg-secondary-container">
+  <body class="bg-background text-on-surface font-body-md selection:bg-secondary-container" style="min-height: 100vh; display: flex; flex-direction: column;">
     <a href="#MainContent" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:bg-copper focus:text-white focus:px-4 focus:py-2 focus:rounded-lg font-label-caps text-label-caps uppercase">
       {{ 'general.skip_to_content' | t }}
     </a>
     {% section 'header' %}
 
     {%- comment -%} Home: hero slides under the transparent header. Other pages: offset for the fixed header (theme.js corrects for announcement height). {%- endcomment -%}
-    <main id="MainContent" class="{% unless request.page_type == 'index' %}pt-20{% endunless %}">
+    <main id="MainContent" style="flex: 1 0 auto;" class="{% unless request.page_type == 'index' %}pt-20{% endunless %}">
       {{ content_for_layout }}
     </main>
 

@@ -971,11 +971,6 @@
       });
     });
 
-    // Account open
-    document.querySelectorAll('[data-account-open]').forEach(el => {
-      el.addEventListener('click', (e) => { e.preventDefault(); openModal('account'); });
-    });
-
     // Size guide open
     document.querySelectorAll('[data-size-guide-open]').forEach(el => {
       el.addEventListener('click', (e) => { e.preventDefault(); openModal('sizeguide'); });
@@ -1240,7 +1235,7 @@
     // Close on Escape key
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape') {
-        ['quickview', 'search', 'sizeguide', 'askquestion', 'support', 'account', 'comingsoon', 'lightbox'].forEach(closeModal);
+        ['quickview', 'search', 'sizeguide', 'askquestion', 'support', 'comingsoon', 'lightbox'].forEach(closeModal);
         ['cart', 'wishlist'].forEach(closeDrawer);
       }
     });
@@ -1654,7 +1649,7 @@
      13. INITIALIZATION ON DOM READY
      ========================================================================== */
   document.addEventListener('DOMContentLoaded', () => {
-    ['quickview', 'search', 'sizeguide', 'askquestion', 'support', 'account', 'comingsoon', 'lightbox'].forEach(closeModal);
+    ['quickview', 'search', 'sizeguide', 'askquestion', 'support', 'comingsoon', 'lightbox'].forEach(closeModal);
     ['cart', 'wishlist'].forEach(closeDrawer);
     initHeroSlider();
     initProductTabs();

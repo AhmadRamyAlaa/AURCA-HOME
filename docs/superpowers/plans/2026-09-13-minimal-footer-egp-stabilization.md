@@ -43,7 +43,7 @@ Replace `sections/footer.liquid` with the clean two-row layout:
         <img src="{{ 'logo-monogram-dark.svg' | asset_url }}" alt="Aurca" width="64" height="64"
              class="object-contain mb-4" style="width: 64px; height: 64px;">
         <p class="text-xs leading-relaxed mb-6" style="color: rgba(255,255,255,0.4);" data-i18n="brandTagline">
-          Luxury homewear for the sacred hours between waking and sleeping. Est. 2018.
+          Comfort made together. Est. 2026.
         </p>
 
         {%- comment -%} Social Icons (Instagram & TikTok only) {%- endcomment -%}
@@ -101,7 +101,7 @@ Replace `sections/footer.liquid` with the clean two-row layout:
   <div class="px-6 lg:px-10 py-5">
     <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3">
       <p class="text-[10px]" style="color: rgba(255,255,255,0.25);" data-i18n="copyright">
-        &copy; 2024 Aurca Homewear. All rights reserved.
+        &copy; 2026 Aurca Homewear. All rights reserved.
       </p>
 
       <div class="flex items-center gap-5">

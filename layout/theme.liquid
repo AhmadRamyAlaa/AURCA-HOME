@@ -39,14 +39,9 @@
       </script>
     {% endif %}
 
-    {%- comment -%} Set dark class before paint to avoid a flash {%- endcomment -%}
+    {%- comment -%} Set language before paint to avoid a flash {%- endcomment -%}
     <script>
       (function () {
-        var mode = localStorage.getItem('aurca:appearance') || localStorage.getItem('hestia:appearance') || '{{ settings.appearance | default: "light" }}';
-        if (mode === 'dark' || (mode === 'system' && matchMedia('(prefers-color-scheme: dark)').matches)) {
-          document.documentElement.classList.add('dark');
-          document.querySelector('meta[name="theme-color"]').content = '#141414';
-        }
         var lang = localStorage.getItem('aurca:lang') || 'en';
         if (lang === 'ar') {
           document.documentElement.setAttribute('dir', 'rtl');

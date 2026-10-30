@@ -511,7 +511,7 @@ Replace the whole file:
     {%- comment -%} Clones of the last/first slide at each end make the loop seamless; theme.js teleports off them {%- endcomment -%}
     <img src="{{ 'slider-5.jpg' | asset_url }}" alt="" aria-hidden="true" width="2400" height="1350"
          class="w-full h-full object-cover shrink-0 snap-center" loading="lazy">
-    {%- assign eyebrows = 'Women\'s Essentials,Men\'s Essentials,Together Edition,New Collection — 2024,Limited Edition' | split: ',' -%}
+    {%- assign eyebrows = 'Women\'s Essentials,Men\'s Essentials,Together Edition,New Collection — 2026,Limited Edition' | split: ',' -%}
     {%- assign headlines = 'Graceful silhouettes, made to be lived in.,Refined comfort, without compromise.,Shared mornings, shared ease.,Dressed for the Hours Between,Quiet luxury for every hour.' | split: ',' -%}
     {%- assign subheads = 'From mulberry silk to organic cotton — every piece shaped around a woman who actually lives.,Premium natural fabrics in precise cuts. Ease and elegance, at every hour.,Matching sets for the moments you share.,Luxurious pyjamas and homewear for morning rituals, afternoon ease, and quiet evenings.,Our most considered pieces, in limited runs.' | split: ',' -%}
     {%- assign ctas = 'Explore Women\'s,Explore Men\'s,Explore Together,Shop the Collection,Explore Limited Edition' | split: ',' -%}

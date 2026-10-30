@@ -25,7 +25,7 @@ Replace the 183-line mega-footer with a clean, two-row split layout styled with 
        - Together Edition (`<a href="#featured-products" data-nav-filter="Together">`)
 
 2. **Bottom Row (Legal & Copyright):**
-   - Left: `© 2024 Aurca Homewear. All rights reserved.`
+   - Left: `© 2026 Aurca Homewear. All rights reserved.`
    - Right: Clean text links for `Privacy` and `Terms`.
 
 3. **Explicit Removals:**

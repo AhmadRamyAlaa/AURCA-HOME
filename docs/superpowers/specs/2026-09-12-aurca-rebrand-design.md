@@ -72,7 +72,7 @@ After editing `gen-vars.js`: `node gen-vars.js && npm run build`.
 | Featured Pieces | `featured-products.liquid` | Filter pills (All/Women/Men/Together), badges (Bestseller/New/-20%/Together), color swatches, Load More / View All — pulls from real Shopify product data, not hardcoded |
 | Testimonials | `testimonial.liquid` | 3 quotes + name/city + star rating, copy pulled verbatim from reference |
 | Instagram/UGC grid | **new section** `instagram-grid.liquid` | "Life in Aurca" masonry grid, doesn't exist in current theme |
-| Footer | `footer.liquid` | Newsletter bar, 3 link columns (Collections/Company/Help), payment icons, socials, "Est. 2018" tagline |
+| Footer | `footer.liquid` | Newsletter bar, 3 link columns (Collections/Company/Help), payment icons, socials, "Est. 2026" tagline |
 
 Non-homepage pages (product, cart, collection listing, account, etc.) get new
 tokens/fonts/logo only — layout unchanged; the reference has no other pages designed.

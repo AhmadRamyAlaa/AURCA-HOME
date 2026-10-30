@@ -1,13 +1,9 @@
-<section class="py-12 px-6 lg:px-10 transition-colors duration-300 bg-white dark:bg-[#141414]">
+<section class="py-12 px-6 lg:px-10 transition-colors duration-300 bg-white">
   <div class="max-w-7xl mx-auto">
     <div class="flex items-center justify-between mb-8">
       <div>
-        <p class="text-[9px] tracking-[0.42em] uppercase mb-3 font-medium" style="color: #A87052;" data-i18n="customerLove">
-          Customer Love
-        </p>
-        <h2 class="font-light font-display text-[clamp(22px,3vw,30px)] text-[#2D2E2D] dark:text-[#F0EDE8] transition-colors" data-i18n="whatCustomersSay">
-          What Our Customers Say
-        </h2>
+        <p class="text-[9px] tracking-[0.42em] uppercase mb-3 font-medium" style="color: #A87052;">{{ section.settings.eyebrow }}</p>
+        <h2 class="font-light font-display text-[clamp(22px,3vw,30px)] text-[#2D2E2D] transition-colors">{{ section.settings.heading }}</h2>
       </div>
       <div class="flex gap-0.5" aria-label="5 stars rating">
         {%- for i in (1..5) -%}
@@ -19,53 +15,22 @@
     </div>
 
     <div class="flex overflow-x-auto snap-x snap-mandatory scroll-smooth no-scrollbar md:grid md:grid-cols-3 gap-4 pb-4 -mx-6 px-6 md:mx-0 md:px-0">
-      {%- comment -%} Review 1: Isabelle M. {%- endcomment -%}
-      <div class="w-[82vw] sm:w-[60vw] md:w-auto shrink-0 snap-start px-6 py-5 bg-[#FAF8F5] dark:bg-[#242424] transition-colors duration-300">
-        <p class="italic text-sm leading-relaxed mb-4 font-display text-[16px] text-[#494D57] dark:text-[#9A9690]">
-          &ldquo;The Midnight Silk Set is the most luxurious thing I own. Every morning feels like a five-star ritual.&rdquo;
+      {%- for block in section.blocks -%}
+      <div {{ block.shopify_attributes }} class="w-[82vw] sm:w-[60vw] md:w-auto shrink-0 snap-start px-6 py-5 bg-[#FAF8F5] transition-colors duration-300">
+        <p class="italic text-sm leading-relaxed mb-4 font-display text-[16px] text-[#494D57]">
+          &ldquo;{{ block.settings.quote | escape }}&rdquo;
         </p>
         <div class="flex items-center gap-2.5">
           <div class="w-7 h-7 rounded-full flex items-center justify-center text-xs font-medium flex-shrink-0" style="background: rgba(168, 112, 82, 0.2); color: #A87052;">
-            I
+            {{ block.settings.name | slice: 0, 1 }}
           </div>
           <div>
-            <p class="text-xs font-medium text-[#2D2E2D] dark:text-[#F0EDE8]">Isabelle M.</p>
-            <p class="text-[9px] text-[#494D57] dark:text-[#9A9690]">Paris, France</p>
+            <p class="text-xs font-medium text-[#2D2E2D]">{{ block.settings.name }}</p>
+            <p class="text-[9px] text-[#494D57]">{{ block.settings.location }}</p>
           </div>
         </div>
       </div>
-
-      {%- comment -%} Review 2: Amara L. {%- endcomment -%}
-      <div class="w-[82vw] sm:w-[60vw] md:w-auto shrink-0 snap-start px-6 py-5 bg-[#FAF8F5] dark:bg-[#242424] transition-colors duration-300">
-        <p class="italic text-sm leading-relaxed mb-4 font-display text-[16px] text-[#494D57] dark:text-[#9A9690]">
-          &ldquo;Finally, pyjamas worth keeping. The quality is extraordinary &mdash; soft, elegant, and they hold their shape perfectly.&rdquo;
-        </p>
-        <div class="flex items-center gap-2.5">
-          <div class="w-7 h-7 rounded-full flex items-center justify-center text-xs font-medium flex-shrink-0" style="background: rgba(168, 112, 82, 0.2); color: #A87052;">
-            A
-          </div>
-          <div>
-            <p class="text-xs font-medium text-[#2D2E2D] dark:text-[#F0EDE8]">Amara L.</p>
-            <p class="text-[9px] text-[#494D57] dark:text-[#9A9690]">London, UK</p>
-          </div>
-        </div>
-      </div>
-
-      {%- comment -%} Review 3: Sofia R. {%- endcomment -%}
-      <div class="w-[82vw] sm:w-[60vw] md:w-auto shrink-0 snap-start px-6 py-5 bg-[#FAF8F5] dark:bg-[#242424] transition-colors duration-300">
-        <p class="italic text-sm leading-relaxed mb-4 font-display text-[16px] text-[#494D57] dark:text-[#9A9690]">
-          &ldquo;I gifted the Cloud White set to my mother and she cried. We are both devoted Aurca customers now.&rdquo;
-        </p>
-        <div class="flex items-center gap-2.5">
-          <div class="w-7 h-7 rounded-full flex items-center justify-center text-xs font-medium flex-shrink-0" style="background: rgba(168, 112, 82, 0.2); color: #A87052;">
-            S
-          </div>
-          <div>
-            <p class="text-xs font-medium text-[#2D2E2D] dark:text-[#F0EDE8]">Sofia R.</p>
-            <p class="text-[9px] text-[#494D57] dark:text-[#9A9690]">New York, USA</p>
-          </div>
-        </div>
-      </div>
+      {%- endfor -%}
     </div>
   </div>
 </section>
@@ -73,7 +38,21 @@
 {% schema %}
 {
   "name": "Testimonials",
-  "settings": [],
-  "presets": [{ "name": "Testimonials" }]
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Small label", "default": "Customer Love" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "What Our Customers Say" }
+  ],
+  "blocks": [
+    {
+      "type": "review",
+      "name": "Review",
+      "settings": [
+        { "type": "textarea", "id": "quote", "label": "Quote" },
+        { "type": "text", "id": "name", "label": "Name" },
+        { "type": "text", "id": "location", "label": "Location" }
+      ]
+    }
+  ],
+  "presets": [{ "name": "Testimonials", "blocks": [{ "type": "review" }, { "type": "review" }, { "type": "review" }] }]
 }
 {% endschema %}

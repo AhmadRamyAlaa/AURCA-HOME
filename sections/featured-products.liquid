@@ -2,12 +2,8 @@
   <div class="max-w-7xl mx-auto">
     {%- comment -%} Section Header {%- endcomment -%}
     <div class="text-center mb-12">
-      <p class="text-[9px] tracking-[0.42em] uppercase mb-3 font-medium" style="color: #A87052;" data-i18n="curatedForYou">
-        Curated for You
-      </p>
-      <h2 class="font-light mb-8 font-display text-[clamp(36px,5vw,52px)] text-[#2D2E2D] dark:text-[#F8F6F1] transition-colors" data-i18n="featuredPieces">
-        Featured Pieces
-      </h2>
+      <p class="text-[9px] tracking-[0.42em] uppercase mb-3 font-medium" style="color: #A87052;">{{ section.settings.eyebrow }}</p>
+      <h2 class="font-light mb-8 font-display text-[clamp(36px,5vw,52px)] text-[#2D2E2D] dark:text-[#F8F6F1] transition-colors">{{ section.settings.heading }}</h2>
 
       {%- comment -%} Filter Tabs {%- endcomment -%}
       <div class="inline-flex border" style="border-color: #BCBCBC;">
@@ -42,11 +38,11 @@
     <div class="text-center mt-14 flex flex-col sm:flex-row items-center justify-center gap-4">
       <button type="button" data-load-more
               class="inline-flex items-center gap-3 text-[10px] tracking-[0.22em] uppercase px-10 py-4 border transition-colors hover:text-white font-medium border-[#494D57] text-[#494D57] hover:bg-[#494D57] dark:border-[#9A9690] dark:text-[#9A9690] dark:hover:bg-[#494D57]">
-        <span data-i18n="loadMore">Load More</span>
+        <span>{{ section.settings.load_more_label }}</span>
       </button>
       <a href="{{ routes.all_products_collection_url }}"
          class="inline-flex items-center gap-3 text-[10px] tracking-[0.22em] uppercase px-10 py-4 border transition-colors hover:text-white font-medium border-[#494D57] text-[#494D57] hover:bg-[#494D57] dark:border-[#9A9690] dark:text-[#9A9690] dark:hover:bg-[#494D57]">
-        <span data-i18n="viewAllProducts">View All Products</span>
+        <span>{{ section.settings.view_all_label }}</span>
       </a>
     </div>
   </div>
@@ -56,6 +52,10 @@
 {
   "name": "Featured pieces",
   "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Small label", "default": "Curated for You" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Featured Pieces" },
+    { "type": "text", "id": "load_more_label", "label": "Load more button", "default": "Load More" },
+    { "type": "text", "id": "view_all_label", "label": "View all button", "default": "View All Products" },
     { "type": "collection", "id": "collection", "label": "Collection", "info": "Defaults to All products if none is chosen" },
     { "type": "range", "id": "products_to_show", "label": "Products to show", "min": 6, "max": 24, "step": 3, "default": 12 }
   ],

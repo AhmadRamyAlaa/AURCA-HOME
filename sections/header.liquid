@@ -1,4 +1,4 @@
-<header data-header class="sticky top-0 w-full z-50 transition-all duration-300" style="background: #A87052;">
+<header data-header class="sticky top-0 w-full z-50 transition-all duration-300" style="background: {{ section.settings.bg_color }};">
 
 
   {%- comment -%} Main Header Bar (110px height) {%- endcomment -%}
@@ -7,6 +7,12 @@
       
       {%- comment -%} Left Navigation (Desktop) {%- endcomment -%}
       <nav class="hidden lg:flex items-center gap-10 z-20">
+        {%- assign nav = linklists[section.settings.menu] -%}
+        {%- if nav.links.size > 0 -%}
+          {%- for link in nav.links -%}
+            <a href="{{ link.url }}" class="text-white/70 hover:text-white transition-colors text-[11px] tracking-[0.2em] uppercase font-medium">{{ link.title }}</a>
+          {%- endfor -%}
+        {%- else -%}
        
         <a href="{{ collections['women'].url | default: routes.all_products_collection_url }}" class="text-white/70 hover:text-white transition-colors text-[11px] tracking-[0.2em] uppercase font-medium" data-i18n="women">
           Women
@@ -17,7 +23,7 @@
         <a href="{{ collections['together'].url | default: routes.all_products_collection_url }}" class="text-white/70 hover:text-white transition-colors text-[11px] tracking-[0.2em] uppercase font-medium" data-i18n="together">
           Together
         </a>
-      
+        {%- endif -%}
       </nav>
 
       {%- comment -%} Mobile Hamburger Menu Button {%- endcomment -%}
@@ -31,7 +37,11 @@
 
       {%- comment -%} Center Brand Wordmark Logo {%- endcomment -%}
       <a href="{{ routes.root_url }}" class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center justify-center z-10">
-        <img src="{{ 'logo-wordmark-cream.svg' | asset_url }}" alt="Aurca — Luxury Homewear" class="h-6 md:h-7 w-auto object-contain flex-shrink-0" style="max-height: 28px;">
+        {%- if section.settings.logo != blank -%}
+          {{ section.settings.logo | image_url: width: 400 | image_tag: alt: shop.name, class: 'h-6 md:h-7 w-auto object-contain flex-shrink-0', style: 'max-height: 28px;' }}
+        {%- else -%}
+          <img src="{{ 'logo-wordmark-cream.svg' | asset_url }}" alt="{{ shop.name }}" class="h-6 md:h-7 w-auto object-contain flex-shrink-0" style="max-height: 28px;">
+        {%- endif -%}
       </a>
 
       {%- comment -%} Right Controls (Desktop) {%- endcomment -%}
@@ -113,8 +123,9 @@
 {
   "name": "Header",
   "settings": [
-    { "type": "image_picker", "id": "logo", "label": "Logo", "info": "Defaults to the Aurca copper monogram" },
-    { "type": "link_list", "id": "menu", "label": "Menu", "default": "main-menu" },
+    { "type": "image_picker", "id": "logo", "label": "Logo", "info": "Leave empty to use the default wordmark" },
+    { "type": "link_list", "id": "menu", "label": "Menu", "info": "Leave empty to use Women / Men / Together" },
+    { "type": "color", "id": "bg_color", "label": "Background color", "default": "#A87052" }
   ]
 }
 {% endschema %}

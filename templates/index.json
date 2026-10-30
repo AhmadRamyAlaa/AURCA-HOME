@@ -71,7 +71,48 @@
     },
     "marquee": {
       "type": "trust-marquee",
-      "settings": {}
+      "settings": {
+        "bg_color": "#494D57"
+      },
+      "blocks": {
+        "item_1": {
+          "type": "item",
+          "settings": {
+            "text": "HANDCRAFTED WITH LOVE"
+          }
+        },
+        "item_2": {
+          "type": "item",
+          "settings": {
+            "text": "ETHICALLY SOURCED FABRICS"
+          }
+        },
+        "item_3": {
+          "type": "item",
+          "settings": {
+            "text": "COMPLIMENTARY GIFT WRAPPING"
+          }
+        },
+        "item_4": {
+          "type": "item",
+          "settings": {
+            "text": "FREE RETURNS WITHIN 14 DAYS"
+          }
+        },
+        "item_5": {
+          "type": "item",
+          "settings": {
+            "text": "COMFORT MADE TOGETHER"
+          }
+        }
+      },
+      "block_order": [
+        "item_1",
+        "item_2",
+        "item_3",
+        "item_4",
+        "item_5"
+      ]
     },
     "categories": {
       "type": "category-bento",
@@ -126,7 +167,41 @@
     "testimonial": {
       "type": "testimonial",
       "disabled": true,
-      "settings": {}
+      "settings": {
+        "eyebrow": "Customer Love",
+        "heading": "What Our Customers Say"
+      },
+      "blocks": {
+        "review_1": {
+          "type": "review",
+          "settings": {
+            "quote": "The Midnight Silk Set is the most luxurious thing I own. Every morning feels like a five-star ritual.",
+            "name": "Isabelle M.",
+            "location": "Paris, France"
+          }
+        },
+        "review_2": {
+          "type": "review",
+          "settings": {
+            "quote": "Finally, pyjamas worth keeping. The quality is extraordinary — soft, elegant, and they hold their shape perfectly.",
+            "name": "Amara L.",
+            "location": "London, UK"
+          }
+        },
+        "review_3": {
+          "type": "review",
+          "settings": {
+            "quote": "I gifted the Cloud White set to my mother and she cried. We are both devoted Aurca customers now.",
+            "name": "Sofia R.",
+            "location": "New York, USA"
+          }
+        }
+      },
+      "block_order": [
+        "review_1",
+        "review_2",
+        "review_3"
+      ]
     },
     "instagram": {
       "type": "instagram-grid",

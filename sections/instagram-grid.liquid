@@ -3,19 +3,17 @@
     {%- comment -%} Section Header {%- endcomment -%}
     <div class="flex items-end justify-between mb-10">
       <div>
-        <p class="text-[9px] tracking-[0.42em] uppercase mb-2 font-medium" style="color: #A87052;">
-          @aurca
-        </p>
-        <h2 class="font-light font-display text-[clamp(28px,4vw,42px)] text-[#2D2E2D] dark:text-[#F0EDE8] transition-colors" data-i18n="lifeInAurca">
-          Life in Aurca
-        </h2>
+        <p class="text-[9px] tracking-[0.42em] uppercase mb-2 font-medium" style="color: #A87052;">{{ section.settings.eyebrow }}</p>
+        <h2 class="font-light font-display text-[clamp(28px,4vw,42px)] text-[#2D2E2D] dark:text-[#F0EDE8] transition-colors">{{ section.settings.heading }}</h2>
       </div>
-      <a href="https://www.instagram.com/aurca.eg?rpxt=MW93N3E5OTc5OXNhcw==" target="_blank" rel="noopener noreferrer"
+      {%- if section.settings.instagram_url != blank -%}
+      <a href="{{ section.settings.instagram_url }}" target="_blank" rel="noopener noreferrer"
          class="hidden md:flex items-center gap-2 text-[10px] tracking-[0.22em] uppercase border-b pb-px hover:opacity-60 transition-opacity font-medium"
          style="color: #A87052; border-color: #A87052;">
-        <span data-i18n="followInstagram">Follow on Instagram</span>
+        <span>{{ section.settings.link_label }}</span>
         <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
       </a>
+      {%- endif -%}
     </div>
 
     {%- comment -%} Masonry Grid: 1 large 2x2 featured item + 5 square items {%- endcomment -%}
@@ -215,7 +213,7 @@
   "settings": [
     { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "@aurca" },
     { "type": "text", "id": "heading", "label": "Heading", "default": "Life in Aurca" },
-    { "type": "url", "id": "instagram_url", "label": "Instagram URL" },
+    { "type": "url", "id": "instagram_url", "label": "Instagram URL", "info": "Leave empty to hide the link" },
     { "type": "text", "id": "link_label", "label": "Link label", "default": "Follow on Instagram" }
   ],
   "blocks": [

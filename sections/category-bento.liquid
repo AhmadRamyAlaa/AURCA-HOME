@@ -1,16 +1,10 @@
 <section id="collections" class="py-20 px-6 lg:px-10 max-w-7xl mx-auto transition-colors duration-300">
   <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-5">
     <div>
-      <p class="text-[9px] tracking-[0.42em] uppercase mb-3 font-medium" style="color: #A87052;" data-i18n="explore">
-        Explore
-      </p>
-      <h2 class="font-light font-display text-[clamp(36px,5vw,52px)] text-[#2D2E2D] dark:text-[#F0EDE8] transition-colors" data-i18n="shopByCollection">
-        Shop by Collection
-      </h2>
+      <p class="text-[9px] tracking-[0.42em] uppercase mb-3 font-medium" style="color: #A87052;">{{ section.settings.eyebrow }}</p>
+      <h2 class="font-light font-display text-[clamp(36px,5vw,52px)] text-[#2D2E2D] dark:text-[#F0EDE8] transition-colors">{{ section.settings.heading }}</h2>
     </div>
-    <a href="{{ routes.all_products_collection_url }}" class="text-[10px] tracking-[0.22em] uppercase border-b pb-px self-start hover:opacity-70 transition-opacity font-medium" style="color: #A87052; border-color: #A87052;" data-i18n="viewAll">
-      View All &rarr;
-    </a>
+    <a href="{{ routes.all_products_collection_url }}" class="text-[10px] tracking-[0.22em] uppercase border-b pb-px self-start hover:opacity-70 transition-opacity font-medium" style="color: #A87052; border-color: #A87052;">{{ section.settings.link_label }} &rarr;</a>
   </div>
 
   <div class="grid grid-cols-1 md:grid-cols-3 gap-4">

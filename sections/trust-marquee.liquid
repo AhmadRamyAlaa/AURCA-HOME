@@ -1,11 +1,10 @@
-<section class="overflow-hidden py-3.5" style="background: #494D57;" aria-label="Benefits ticker">
+<section class="overflow-hidden py-3.5" style="background: {{ section.settings.bg_color }};" aria-label="Benefits ticker">
   <div class="flex animate-marquee whitespace-nowrap">
-    {%- assign items = "HANDCRAFTED WITH LOVE|ETHICALLY SOURCED FABRICS|COMPLIMENTARY GIFT WRAPPING|FREE RETURNS WITHIN 14 DAYS|COMFORT MADE TOGETHER" | split: "|" -%}
     {%- for i in (1..3) -%}
-      {%- for item in items -%}
-        <span class="inline-flex items-center">
+      {%- for block in section.blocks -%}
+        <span class="inline-flex items-center" {{ block.shopify_attributes }}>
           <span class="text-white/55 text-[9px] tracking-[0.35em] uppercase mx-8 font-medium">
-            {{ item }}
+            {{ block.settings.text }}
           </span>
           <img src="{{ 'logo-monogram-flower.svg' | asset_url }}" alt="" class="w-2 h-2 object-contain brightness-0 invert opacity-25" loading="lazy">
         </span>
@@ -17,7 +16,18 @@
 {% schema %}
 {
   "name": "Trust marquee",
-  "settings": [],
-  "presets": [{ "name": "Trust marquee" }]
+  "settings": [
+    { "type": "color", "id": "bg_color", "label": "Background color", "default": "#494D57" }
+  ],
+  "blocks": [
+    {
+      "type": "item",
+      "name": "Item",
+      "settings": [
+        { "type": "text", "id": "text", "label": "Text", "default": "Free returns within 14 days" }
+      ]
+    }
+  ],
+  "presets": [{ "name": "Trust marquee", "blocks": [{ "type": "item" }, { "type": "item" }, { "type": "item" }] }]
 }
 {% endschema %}

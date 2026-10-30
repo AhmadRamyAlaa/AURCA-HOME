@@ -1,10 +1,35 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
-    "main": { "type": "main-cart" },
+    "main": {
+      "type": "main-cart",
+      "settings": {
+        "free_shipping_threshold": 0,
+        "badges": "lock|Secure SSL Checkout\neco|Eco-Friendly Packaging\npackage_2|Carbon Neutral Delivery"
+      }
+    },
     "recommendations": {
       "type": "featured-products",
-      "settings": { "eyebrow": "", "heading": "Complete the Look", "limit": 4, "collection": "all" }
+      "settings": {
+        "eyebrow": "Curated for You",
+        "heading": "Featured Pieces",
+        "load_more_label": "Load More",
+        "view_all_label": "View All Products",
+        "collection": "",
+        "products_to_show": 12
+      }
     }
   },
-  "order": ["main", "recommendations"]
+  "order": [
+    "main",
+    "recommendations"
+  ]
 }

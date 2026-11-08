@@ -27,6 +27,7 @@
         "slide_2": {
           "type": "slide",
           "settings": {
+            "image": "shopify://shop_images/DSC01213.jpg",
             "image_url": "https://images.unsplash.com/photo-1766056278944-ca0e4f49e61f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
             "label": "First time to the ocean | Women",
             "title": "Graceful silhouettes,|made to be lived in.",
@@ -38,7 +39,8 @@
         "slide_3": {
           "type": "slide",
           "settings": {
-            "image_url": "https://images.unsplash.com/photo-1736697421338-c361795c7191?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
+            "image": "shopify://shop_images/DSC01135.jpg",
+            "image_url": "",
             "label": "First time to the ocean | Men",
             "title": "Refined comfort,|without compromise.",
             "text": "Premium natural fabrics in precise cuts. Ease and elegance, at every hour.",
@@ -49,7 +51,8 @@
         "slide_4": {
           "type": "slide",
           "settings": {
-            "image_url": "https://images.unsplash.com/photo-1778731525489-020d49e8e1a1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
+            "image": "shopify://shop_images/DSC01136.jpg",
+            "image_url": "",
             "label": "First time to the ocean | Together",
             "title": "Made for the|moments you share.",
             "text": "Limited pieces in cashmere and mulberry silk — designed as a pair, worn as one.",

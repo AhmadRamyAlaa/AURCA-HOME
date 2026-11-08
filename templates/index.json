@@ -213,6 +213,7 @@
         "p1": {
           "type": "photo",
           "settings": {
+            "image": "shopify://shop_images/DSC01213.jpg",
             "tag": "Men · Silk Edit",
             "caption": "Morning Ritual"
           }
@@ -220,6 +221,7 @@
         "p2": {
           "type": "photo",
           "settings": {
+            "image": "shopify://shop_images/DSC01136.jpg",
             "tag": "Men · Essential",
             "caption": "Evening Ease"
           }
@@ -227,6 +229,7 @@
         "p3": {
           "type": "photo",
           "settings": {
+            "image": "shopify://shop_images/DSC01139.jpg",
             "tag": "Together Edition",
             "caption": "Sunday Hours"
           }
@@ -234,6 +237,7 @@
         "p4": {
           "type": "photo",
           "settings": {
+            "image": "shopify://shop_images/DSC01139.jpg",
             "tag": "Women · Modal",
             "caption": "The Quiet Bedroom"
           }
@@ -241,15 +245,9 @@
         "p5": {
           "type": "photo",
           "settings": {
+            "image": "shopify://shop_images/DSC01135.jpg",
             "tag": "Together Edition",
             "caption": "Shared Mornings"
-          }
-        },
-        "p6": {
-          "type": "photo",
-          "settings": {
-            "tag": "Women · Silk",
-            "caption": "First Light"
           }
         }
       },
@@ -258,8 +256,7 @@
         "p2",
         "p3",
         "p4",
-        "p5",
-        "p6"
+        "p5"
       ],
       "settings": {
         "eyebrow": "@aurca",

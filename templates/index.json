@@ -15,8 +15,8 @@
         "slide_1": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/DSC01221_JPG.jpg",
-            "image_url": "https://images.unsplash.com/photo-1771620886948-3887ba3223f3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1800",
+            "image": "shopify://shop_images/DSC01139.jpg",
+            "image_url": "",
             "label": "First time to the ocean | 2026",
             "title": "Dressed for the|Hours Between",
             "text": "Luxurious pyjamas and homewear for morning rituals, afternoon ease, and quiet evenings.",
@@ -27,7 +27,6 @@
         "slide_2": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/DSC01213_JPG.jpg",
             "image_url": "https://images.unsplash.com/photo-1766056278944-ca0e4f49e61f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
             "label": "First time to the ocean | Women",
             "title": "Graceful silhouettes,|made to be lived in.",
@@ -39,7 +38,6 @@
         "slide_3": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/DSC01158_JPG.jpg",
             "image_url": "https://images.unsplash.com/photo-1736697421338-c361795c7191?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
             "label": "First time to the ocean | Men",
             "title": "Refined comfort,|without compromise.",
@@ -51,7 +49,6 @@
         "slide_4": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/DSC01139_JPG.jpg",
             "image_url": "https://images.unsplash.com/photo-1778731525489-020d49e8e1a1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
             "label": "First time to the ocean | Together",
             "title": "Made for the|moments you share.",
@@ -213,7 +210,6 @@
         "p1": {
           "type": "photo",
           "settings": {
-            "image": "shopify://shop_images/DSC01137_JPG_3b8ea9d4-34ae-4869-891e-1607b81cfe2f.jpg",
             "tag": "Men · Silk Edit",
             "caption": "Morning Ritual"
           }

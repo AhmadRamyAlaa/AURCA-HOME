@@ -158,7 +158,6 @@
     },
     "featured": {
       "type": "featured-products",
-      "disabled": true,
       "settings": {
         "eyebrow": "Curated for You",
         "heading": "First Time To The Ocean",
@@ -170,6 +169,7 @@
     },
     "featured_products_C3fM66": {
       "type": "featured-products",
+      "disabled": true,
       "name": "Featured pieces",
       "settings": {
         "eyebrow": "Curated for You",

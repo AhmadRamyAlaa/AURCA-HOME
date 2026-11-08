@@ -129,7 +129,7 @@
         "men": {
           "type": "category",
           "settings": {
-            "collection": "",
+            "collection": "men",
             "badge": "",
             "eyebrow": "The Essential Range",
             "title": "Men"

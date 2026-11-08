@@ -15,6 +15,7 @@
         "slide_1": {
           "type": "slide",
           "settings": {
+            "image": "shopify://shop_images/DSC01213.jpg",
             "image_url": "",
             "label": "First time to the ocean | 2026",
             "title": "Dressed for the|Hours Between",
@@ -268,6 +269,7 @@
         "p4",
         "p5"
       ],
+      "disabled": true,
       "settings": {
         "eyebrow": "@aurca",
         "heading": "Life in Aurca",

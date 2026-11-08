@@ -150,7 +150,6 @@
         "men",
         "together"
       ],
-      "disabled": true,
       "settings": {
         "eyebrow": "Explore",
         "heading": "Shop by Collection",
@@ -159,6 +158,7 @@
     },
     "featured": {
       "type": "featured-products",
+      "disabled": true,
       "settings": {
         "eyebrow": "Curated for You",
         "heading": "First Time To The Ocean",

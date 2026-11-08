@@ -168,6 +168,19 @@
         "products_to_show": 12
       }
     },
+    "featured_products_C3fM66": {
+      "type": "featured-products",
+      "disabled": true,
+      "name": "Featured pieces",
+      "settings": {
+        "eyebrow": "Curated for You",
+        "heading": "Featured Pieces",
+        "load_more_label": "Load More",
+        "view_all_label": "View All Products",
+        "collection": "",
+        "products_to_show": 12
+      }
+    },
     "testimonial": {
       "type": "testimonial",
       "blocks": {
@@ -271,6 +284,7 @@
     "marquee",
     "categories",
     "featured",
+    "featured_products_C3fM66",
     "testimonial",
     "instagram"
   ]
